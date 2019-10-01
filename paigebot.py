@@ -7,7 +7,7 @@ from functools import partial
 
 PAIGE_ID = "587299790900166669"
 PAIGE_CHANNEL = "622489632239648789"
-TOKEN = 'NjI4MTcxNDM3NzA5OTgzNzY0.XZHVqA.3UL3TCcPqjHeAU0RUHv5J1bblTA'
+TOKEN = 'NjI4MTcxNDM3NzA5OTgzNzY0.XZOMNQ.HnIgv3NXPyJJhGXqe3Mv9fdTXTY'
 
 cuties = [PAIGE_ID]
 
@@ -111,7 +111,7 @@ regexes = [
 	("^paigebot pun (?P<content>.*)", partial(from_file, "puns.txt", "no puns given")),
 	("^paigebot source", handle_source),
 	("^paigebot (?P<content>.*)", partial(from_file, "commands.txt", "no puns given")),
-	(".*(goose|geese|honk)", partial(static, "honk")),
+	(r".*\b:?(goose|geese|honk):?\b.*", partial(static, "honk")),
 	(".*(hj[öo]nk|hönk).*", partial(static, "hjönk")),
 	(".*הונק.*", partial(static, "הונק")),
 	("פייג'בוט את יודעת עברית?", handle_hebrew)
